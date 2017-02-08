@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/mdlingenium/simple-contact#readme",
   "dependencies": {
-    "express": "^4.14.1"
+    "express": "^4.14.1",
+    "underscore": "^1.8.3"
   }
 }
