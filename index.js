@@ -1,11 +1,13 @@
 "use strict"
+
 const express = require('express');
 const bodyParser = require('body-parser'); 
 const ContactManager = require('./contact_manager');
+
 const contactManager = new ContactManager();
 const PORT = process.env.PORT || 3000;
 
-let getErrorObject = function (error) {
+const getErrorObject = function (error) {
     return {
         code: error.code || 500,
         status: "error",

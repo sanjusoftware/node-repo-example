@@ -6,10 +6,9 @@ module.exports = class ContactManager {
     constructor() {
         this.contacts = [];
     }
-
     getContact(firstName) {
         return _.find(this.contacts, (contact) => {
-            return contact.firstName === firstName;
+            return contact.firstName === firstName;  
         });
     }
 
@@ -44,5 +43,4 @@ module.exports = class ContactManager {
     deleteAllContacts(){
         this.contacts = [];
     }
-
 }
