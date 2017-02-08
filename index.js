@@ -47,7 +47,7 @@ app.get('/contact/:firstname', (req, res) => {
         res.json({
             status: 200,
             message: "ok",
-            data: contact ? [contact] : null
+            data: contact ? [contact] : []
         });
     } catch (error) {
         res.json(getErrorObject(error));
