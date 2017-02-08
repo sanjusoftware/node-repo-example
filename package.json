@@ -18,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/mdlingenium/simple-contact/issues"
   },
-  "homepage": "https://github.com/mdlingenium/simple-contact#readme"
+  "homepage": "https://github.com/mdlingenium/simple-contact#readme",
+  "dependencies": {
+    "express": "^4.14.1"
+  }
 }
