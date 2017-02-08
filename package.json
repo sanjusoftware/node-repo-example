@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/mdlingenium/simple-contact#readme",
   "dependencies": {
+    "body-parser": "^1.16.0",
     "express": "^4.14.1",
     "mocha": "^3.2.0",
     "supertest": "^3.0.0",
