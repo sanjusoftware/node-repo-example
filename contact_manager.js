@@ -2,15 +2,15 @@
 
 const _ = require('underscore');
 
-class ContactManager {
+module.exports = class ContactManager {
     constructor() {
-        let contacts = [];
+        this.contacts = [];
     }
 
-    getContact(firstname) {
-        return this.contacts.filter((contact) => {
-            contact.firstname = firstname;
-        });
+    getContact(firstName) {
+        return _.find(this.contacts, (contact) => {
+            return contact.firstName === firstName;
+        })
     }
 
     getAllContacts() {
@@ -21,11 +21,11 @@ class ContactManager {
         if(!contactInfo) 
             throw {code: 400, status:"error", message: `bad parameter ${contactInfo}`};
 
-        this.contact.push(contactInfo);
+        this.contacts.push(contactInfo);
     }
 
-    editContact(firstname, contactInfo){
-        let contact = getContact(firstname);
+    editContact(firstName, contactInfo){
+        let contact = this.getContact(firstName);
         if(!contact)
             throw {code: 200, status: "error", message: "contact not found"};
 
@@ -33,5 +33,9 @@ class ContactManager {
             contact[key] = contactInfo[key];
         });
         return contact;
+    }
+
+    deleteAllContacts(){
+        this.contacts = [];
     }
 }

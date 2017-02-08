@@ -4,7 +4,7 @@
   "description": "Simple contact management.",
   "main": "index.js",
   "scripts": {
-    "test": "npm test"
+    "test": "mocha ."
   },
   "repository": {
     "type": "git",
@@ -21,6 +21,8 @@
   "homepage": "https://github.com/mdlingenium/simple-contact#readme",
   "dependencies": {
     "express": "^4.14.1",
+    "mocha": "^3.2.0",
+    "supertest": "^3.0.0",
     "underscore": "^1.8.3"
   }
 }
