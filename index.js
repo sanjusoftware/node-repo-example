@@ -3,6 +3,7 @@ const express = require('express');
 const bodyParser = require('body-parser'); 
 const ContactManager = require('./contact_manager');
 const contactManager = new ContactManager();
+const PORT = process.env.PORT || 3000;
 
 let getErrorObject = function (error) {
     return {
@@ -39,12 +40,12 @@ app.get('/contact/list', (req, res) => {
 
 app.get('/contact/:firstname', (req, res) => {
     try {
-        let firstName = req.params.firstName;
+        let firstName = req.params.firstname;
         let contact = contactManager.getContact(firstName);
         res.json({
             status: 200,
             message: "ok",
-            data: [contact]
+            data: contact ? [contact] : null
         });
     } catch (error) {
         res.json(getErrorObject(error));
@@ -90,6 +91,31 @@ app.post('/contact', (req, res) => {
     }
 });
 
-app.listen(3000, function () {
-    console.log("App listening on port 3000...");
+app.delete('/contact', (req, res) => {
+    try {
+        contactManager.deleteAllContacts();
+        res.json({
+            code: "200",
+            status: "ok"
+        });
+    } catch (error) {
+        res.json(getErrorObject(error));
+    }
+});
+
+app.delete('/contact/:firstname', (req, res) => {
+    try {
+        let firstName = req.params.firstname;
+        contactManager.deleteContact(firstName);
+        res.json({
+            code: "200",
+            status: "ok"
+        });
+    } catch (error) {
+        res.json(getErrorObject(error));
+    }
+});
+
+app.listen(PORT, function () {
+    console.log(`App listening on port ${PORT}...`);
 });

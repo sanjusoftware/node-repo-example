@@ -10,7 +10,7 @@ module.exports = class ContactManager {
     getContact(firstName) {
         return _.find(this.contacts, (contact) => {
             return contact.firstName === firstName;
-        })
+        });
     }
 
     getAllContacts() {
