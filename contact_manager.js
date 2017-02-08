@@ -19,7 +19,7 @@ module.exports = class ContactManager {
 
     createContact(contactInfo){
         if(!contactInfo) 
-            throw {code: 400, status:"error", message: `bad parameter ${contactInfo}`};
+            throw {code: 400, status:"error", message: `bad parameter contactInfo ${contactInfo}`};
 
         this.contacts.push(contactInfo);
     }
@@ -35,7 +35,14 @@ module.exports = class ContactManager {
         return contact;
     }
 
+    deleteContact(firstName){
+        this.contacts = this.contacts.filter((contact) => {
+            return contact.firstName !== firstName;
+        });
+    }
+
     deleteAllContacts(){
         this.contacts = [];
     }
+
 }

@@ -37,14 +37,27 @@ app.get('/contact/list', (req, res) => {
     }
 });
 
-app.get('/contact/:username', (req, res) => {
+app.get('/contact/:firstname', (req, res) => {
     try {
-        let username = req.params.username;
-        let contact = contactManager.getContact(username);
+        let firstName = req.params.firstName;
+        let contact = contactManager.getContact(firstName);
         res.json({
             status: 200,
             message: "ok",
             data: [contact]
+        });
+    } catch (error) {
+        res.json(getErrorObject(error));
+    }
+});
+
+app.post('/contact/:firstname', (req, res) => {
+    try {
+        let firstName = req.params.firstname;
+        let contact = contactManager.deleteContact(firstName);
+        res.json({
+            status: 200,
+            message: "ok"
         });
     } catch (error) {
         res.json(getErrorObject(error));

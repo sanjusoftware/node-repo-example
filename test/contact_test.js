@@ -20,7 +20,7 @@ describe("Contact manager", function () {
     });
 
     describe('Get contact', function () {
-        it('should be able to get list all contacts', function () {
+        it('should be able to get list of all contacts', function () {
             let allContacts = contactManager.getAllContacts();
             assert.equal(allContacts.length, 1);
             assert.equal(allContacts[0].firstName, "mamaz");
@@ -64,7 +64,20 @@ describe("Contact manager", function () {
                 });
             });
         })
-
     });
 
+    describe('Delete contact', function () {
+        it('should be able to delete a contact', function () {
+            contactManager.deleteContact("mamaz");
+            let contact = contactManager.getContact("mamaz");
+            assert.equal(contact, null);
+        });
+
+        it('should be able to delete all contact', function () {
+            contactManager.deleteAllContacts();
+            let contacts = contactManager.getAllContacts();
+            assert.equal(contacts.length, 0);
+        });
+    });
+    
 });
