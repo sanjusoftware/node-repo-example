@@ -54,19 +54,6 @@ app.get('/contact/:firstname', (req, res) => {
     }
 });
 
-app.post('/contact/:firstname', (req, res) => {
-    try {
-        let firstName = req.params.firstname;
-        let contact = contactManager.deleteContact(firstName);
-        res.json({
-            status: 200,
-            message: "ok"
-        });
-    } catch (error) {
-        res.json(getErrorObject(error));
-    }
-});
-
 app.put('/contact/:firstname', (req, res) => {
     let firstName = req.params.firstname;
     let contactInfo = req.body;
