@@ -38,6 +38,20 @@ describe("Contact manager", function () {
             assert.notEqual(null, contact);
             assert.equal("mamaz", contact.firstName);
         });
+
+        it('should be able to alter previous user if it exists', function () {
+            contactManager.createContact({
+                firstName: "mamaz",
+                lastName: "mulya",
+                age: 23,
+                photo: "picture.png",
+                other: null
+            });
+            let contact = contactManager.getContact("mamaz");
+            assert.notEqual(contact, null);
+            assert.equal(contact.other, null);
+            assert.equal(contact.photo, "picture.png");
+        });
     });
 
     describe('Edit contact', function () {
@@ -79,5 +93,5 @@ describe("Contact manager", function () {
             assert.equal(contacts.length, 0);
         });
     });
-    
+
 });

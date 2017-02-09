@@ -21,7 +21,14 @@ module.exports = class ContactManager {
         if(!contactInfo) 
             throw {code: 400, status:"error", message: `bad parameter contactInfo ${contactInfo}`};
 
-        this.contacts.push(contactInfo);
+        let contact = this.getContact(contactInfo.firstName);
+        if(!contact)
+            this.contacts.push(contactInfo);
+        else{
+            this.contacts = this.contacts.map((con) => {   
+                return con.firstName === contactInfo.firstName ? contactInfo : con
+            });
+        }
     }
 
     editContact(firstName, contactInfo){
