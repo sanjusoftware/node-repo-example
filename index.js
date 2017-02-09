@@ -48,5 +48,5 @@ app.get('/swagger.json', (req, res) => {
 });
 
 app.listen(PORT, () => {
-    console.log(`App listening on port ${PORT}...`);
+    console.log(`Serveri is listening on localhost port ${PORT}...`);
 });

@@ -28,9 +28,13 @@ A `contact` looks like this:
 
 
 ## Quick start
-To install you need to have node version 6.x.x in your system. Then just run:
+To install you need to have node version 6.x.x in your system. 
+
+Then just run:
+
 `npm install`
-`node index.js`
+
+`npm start`
 
 it will run on port 3000 by default, or you can specify your port of choice 
 by specifying `PORT` in your environment variables.
@@ -48,7 +52,13 @@ These are following API available
 You can check out the complete API documentation at [Swagger](http://localhost:3000/#/Contacts).
 
 ## Test
-`npm test`
+`npm test` 
+
+for running unit test
+
+`npm run coverage` 
+
+for generating code coverage, it will generate them in <root_directory>/coverage
 
 ## Author
 [@hismamaz](https://twitter.com/hismamaz)
