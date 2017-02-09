@@ -12,9 +12,9 @@ let app = express();
 // swagger definition
 let swaggerDefinition = {
     info: {
-        title: 'Node Swagger API',
+        title: 'Simple Contact API',
         version: '1.0.0',
-        description: 'Demonstrating how to describe a RESTful API with Swagger',
+        description: 'Demonstrating how to create API using Express and Swagger as the documentation tool.',
     },
     host: 'localhost:3000',
     basePath: '/',
@@ -25,7 +25,7 @@ let options = {
     // import swaggerDefinitions
     swaggerDefinition: swaggerDefinition,
     // path to the API docs
-    apis: ['./*.js'],
+    apis: ['./routes/*.js'],
 };
 
 // initialize swagger-jsdoc
