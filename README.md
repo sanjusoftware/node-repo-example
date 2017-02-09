@@ -7,7 +7,6 @@ A `contact` looks like this:
 ```
 [
     {
-    "id": "1",
     "firstName": "Bilbo",
     "lastName": "Baggins",
     "age": 111,
@@ -49,7 +48,7 @@ These are following API available
 - DELETE /contact/{firstname}
 - DELETE /contact
 
-You can check out the complete API documentation at [Swagger](http://localhost:3000/#/Contacts).
+You can check out the complete Swagger-API documentation at [http://localhost:3000/#/Contacts] (http://localhost:3000/#/Contacts).
 
 ## Test
 `npm test` 
