@@ -35,8 +35,17 @@ To install you need to have node version 6.x.x in your system. Then just run:
 it will run on port 3000 by default, or you can specify your port of choice 
 by specifying `PORT` in your environment variables.
 
-## Documentation
+## API Documentation
+These are following API available 
 
+- GET /contact/list
+- GET /contact/{firstname}
+- POST /contact
+- PUT /contact/{firstname}
+- DELETE /contact/{firstname}
+- DELETE /contact
+
+You can check out the complete API documentation at [Swagger](http://localhost:3000/#/Contacts).
 
 ## Test
 `npm test`
