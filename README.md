@@ -2,13 +2,30 @@
 
 Simple contact management running in local memory.
 
+A `contact` looks like this:
+
+```
+[
+    {
+    "id": "1",
+    "firstName": "Bilbo",
+    "lastName": "Baggins",
+    "age": 111,
+    "photo": "http://vignette1.wikia.nocookie.net/lotr/images/6/68/Bilbo_baggins.jpg/revision/latest?cb=20130202022550",
+    "other": {}
+    }
+]
+```
+
 ## Features
+
 - View all contacts
 - View a contact
 - Create new contact
 - Edit a contact
 - Delete a contact
 - Delete all contacts
+
 
 ## Quick start
 To install you need to have node version 6.x.x in your system. Then just run:
