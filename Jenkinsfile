@@ -1,3 +1,5 @@
+#!groovy
+
 @NonCPS
 def jsonParse(def json) {
     return new groovy.json.JsonSlurperClassic().parseText(json);
